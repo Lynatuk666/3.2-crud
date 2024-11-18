@@ -14,7 +14,6 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ('id', 'title', 'description')
-        ordering = ['-id']
 
 
 
@@ -22,7 +21,6 @@ class ProductPositionSerializer(serializers.ModelSerializer):
     class Meta:
         model = StockProduct
         fields = ('id', 'quantity', 'price', 'product')
-        ordering = ['-id']
 
 
 class StockSerializer(serializers.ModelSerializer):
@@ -31,7 +29,6 @@ class StockSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stock
         fields = ('id', 'address', 'positions')
-        ordering = ['-id']
 
     def create(self, validated_data):
         stock = Stock.objects.create(address=validated_data['address'])
@@ -61,4 +58,3 @@ class StockViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stock
         fields = ('id', 'address')
-        ordering = ['-id']
