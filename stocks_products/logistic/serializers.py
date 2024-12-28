@@ -1,12 +1,4 @@
-from curses.textpad import Textbox
-from itertools import product
-from xml.dom.minidom import ProcessingInstruction
-
-from django.db.models import CharField, TextField
-from django.template.defaulttags import querystring
 from rest_framework import serializers
-from rest_framework.fields import HiddenField
-
 from logistic.models import Product, Stock, StockProduct
 
 
